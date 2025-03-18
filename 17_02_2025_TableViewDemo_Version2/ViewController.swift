@@ -7,16 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+class ViewController: UIViewController{
     
     @IBOutlet weak var menuTableView: UITableView!
     
     var menuItems : [Menu] = [
-        Menu(menuItem: "Dosa", menuDescription: "delicious", menuPrice: 75.00),
-        Menu(menuItem: "Idli", menuDescription: "delicious", menuPrice: 40.00),
-        Menu(menuItem: "Samosa", menuDescription: "delicious", menuPrice: 20.00),
-        Menu(menuItem: "Upma", menuDescription: "delicious", menuPrice: 30.00),
-        Menu(menuItem: "Vada", menuDescription: "delicious", menuPrice: 40.00)
+        Menu(menuItem: "Dosa", menuDescription: "delicious", menuPrice: 75.00,
+             menuImage: UIImage(named: "test_image_1")!),
+        Menu(menuItem: "Idli", menuDescription: "delicious", menuPrice: 40.00, menuImage: UIImage(named: "test_image_2")!),
+        Menu(menuItem: "Samosa", menuDescription: "delicious", menuPrice: 20.00, menuImage: UIImage(named: "test_image_3")!),
+        Menu(menuItem: "Upma", menuDescription: "delicious", menuPrice: 30.00, menuImage: UIImage(named: "test_image_1")!),
+        Menu(menuItem: "Vada", menuDescription: "delicious", menuPrice: 40.00, menuImage: UIImage(named: "test_image_2")!)
     ]
     
     override func viewDidLoad() {
@@ -30,7 +31,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         let uiNib = UINib(nibName: "MenuTableViewCell", bundle: nil)
         self.menuTableView.register(uiNib, forCellReuseIdentifier: "MenuTableViewCell")
     }
-    
+}
+
+//MARK : Implementation of UITableViewDataSource
+extension ViewController : UITableViewDataSource{
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         menuItems.count
     }
@@ -41,10 +46,14 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         menuTableViewCell.menuItemLabel.text = menuItems[indexPath.row].menuItem
         menuTableViewCell.menuItemDescriptionLabel.text = menuItems[indexPath.row].menuDescription
         menuTableViewCell.menuItemPriceLabel.text = "\(menuItems[indexPath.row].menuPrice)"
+        menuTableViewCell.menuImageView.image = menuItems[indexPath.row].menuImage
         
         return menuTableViewCell
     }
-    
+}
+
+//MARK : Implementation of UITableViewDelegate
+extension ViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90.0
     }
