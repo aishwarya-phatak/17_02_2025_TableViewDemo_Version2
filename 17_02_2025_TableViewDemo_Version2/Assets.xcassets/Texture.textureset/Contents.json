@@ -1,0 +1,30 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "textures" : [
+    {
+      "display-gamut" : "display-P3",
+      "filename" : "Universal Display P3.mipmapset",
+      "idiom" : "universal"
+    },
+    {
+      "display-gamut" : "display-P3",
+      "filename" : "Universal Metal Apple 1 Display P3.mipmapset",
+      "graphics-feature-set" : "apple1",
+      "idiom" : "universal"
+    },
+    {
+      "display-gamut" : "sRGB",
+      "filename" : "Universal Metal Apple 1 sRGB.mipmapset",
+      "graphics-feature-set" : "apple1",
+      "idiom" : "universal"
+    },
+    {
+      "display-gamut" : "sRGB",
+      "filename" : "Universal sRGB.mipmapset",
+      "idiom" : "universal"
+    }
+  ]
+}
