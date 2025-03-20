@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UD0-7C-kIU">
-                                <rect key="frame" x="10" y="79" width="373" height="719"/>
+                                <rect key="frame" x="10" y="139" width="373" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuTableViewCell" id="Txk-GK-9Np" customClass="MenuTableViewCell" customModule="_7_02_2025_TableViewDemo_Version2" customModuleProvider="target">
@@ -30,13 +31,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXR-S2-Fde">
+                                <rect key="frame" x="250" y="79" width="123" height="40"/>
+                                <color key="backgroundColor" name="yellow_color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yM8-P0-3tZ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnAddMenuItem:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ay8-c7-MOL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UD0-7C-kIU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="HSh-uu-iZ8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fXR-S2-Fde" secondAttribute="trailing" constant="20" id="2o7-6r-ohg"/>
+                            <constraint firstItem="UD0-7C-kIU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="HSh-uu-iZ8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UD0-7C-kIU" secondAttribute="trailing" constant="10" id="bQ0-Dj-WWO"/>
+                            <constraint firstItem="fXR-S2-Fde" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="c8U-ri-c4p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UD0-7C-kIU" secondAttribute="bottom" constant="20" id="fjv-BE-bE6"/>
+                            <constraint firstItem="fXR-S2-Fde" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="250" id="go7-Wl-Thk"/>
                             <constraint firstItem="UD0-7C-kIU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="m6P-BN-yWJ"/>
                         </constraints>
                     </view>
@@ -50,6 +68,12 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="yellow_color">
+            <color red="1" green="1" blue="0.50300002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

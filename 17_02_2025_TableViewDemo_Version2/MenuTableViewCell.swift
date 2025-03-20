@@ -13,6 +13,7 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var menuItemLabel: UILabel!
     @IBOutlet weak var menuItemDescriptionLabel: UILabel!
     @IBOutlet weak var menuItemPriceLabel: UILabel!
+    @IBOutlet weak var btnDeleteMenuItem: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +25,7 @@ class MenuTableViewCell: UITableViewCell {
 
         
     }
+    
+    
     
 }
